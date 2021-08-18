@@ -52,7 +52,7 @@ export const Widget = () => {
   }
 
   return (
-    <DataWidget.Widget classes="date-display" Icon={Icons.Date} onClick={onClick}>
+    <DataWidget.Widget classes="date-display" Icon={Icons.Date} href="https://calendar.google.com/calendar/u/0/r">
       {now}
     </DataWidget.Widget>
   )
