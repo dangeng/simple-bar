@@ -20,10 +20,10 @@ const getTransform = (value) => {
 const toggleCaffeinate = (caffeinate, option) => {
   if (!caffeinate.length) {
     Uebersicht.run(`caffeinate ${option} &`)
-    Utils.notification('Enabling caffeinate...')
+    {/*Utils.notification('Enabling caffeinate...')*/}
   } else {
     Uebersicht.run('pkill -f caffeinate')
-    Utils.notification('Disabling caffeinate...')
+    {/*Utils.notification('Disabling caffeinate...')*/}
   }
 }
 
