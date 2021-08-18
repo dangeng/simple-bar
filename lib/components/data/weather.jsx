@@ -26,7 +26,7 @@ const getLabel = (location, temperature, unit, hideLocation) => {
 
 const refreshWeather = (e) => {
   Utils.clickEffect(e)
-  Utils.notification('Opening forecast from wttr.in...')
+  {/*Utils.notification('Opening forecast from wttr.in...')*/}
 }
 
 const getPosition = async () =>
@@ -91,9 +91,13 @@ export const Widget = () => {
   const sunrising = sunriseTime >= nowIntervalStart && sunriseTime <= nowIntervalStop
   const sunsetting = sunsetTime >= nowIntervalStart && sunsetTime <= nowIntervalStop
 
-  const classes = Utils.classnames('weather', {
+  {/*const classes = Utils.classnames('weather', {
     'weather--sunrise': sunrising,
     'weather--sunset': sunsetting
+  })*/}
+  const classes = Utils.classnames('weather', {
+    'weather--sunrise': false,
+    'weather--sunset': false 
   })
 
   return (
@@ -101,6 +105,7 @@ export const Widget = () => {
       classes={classes}
       Icon={Icon}
       href={`https://wttr.in/${state.location}${wttrUnitParam}`}
+      href={`https://www.google.com/search?q=weather+${state.location}`}
       onClick={refreshWeather}
     >
       {!hideGradient && <div className="weather__gradient" />}
